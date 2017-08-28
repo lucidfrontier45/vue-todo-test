@@ -73,7 +73,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 ul {
   margin-left: 0;
   padding-left: 0;
