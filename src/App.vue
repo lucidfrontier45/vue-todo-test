@@ -1,13 +1,16 @@
 <template lang="pug">
   #app
-    router-link(to="/")
-      h2  Top
-    router-view
+    .app-header
+      el-menu(:default-active="$route.fullPath" @select="handleSelect" mode="horizontal" router)
+        el-menu-item(index="/") Top
+        el-menu-item(index="/todos") Todos
+    .app-main
+      router-view
 </template>
 
 <script>
 export default {
-  name: "app"
+  name: "app",
 }
 </script>
 
@@ -18,5 +21,7 @@ export default {
   -moz-osx-font-smoothing: grayscale
   text-align: center
   color: #2c3e50
-  margin-top: 60px
+  
+  .app-main
+    margin-top: 60px
 </style>
