@@ -1,27 +1,27 @@
-<template>
-  <div id="app">
-    <div>
-      <router-link to="/">
-        <h2>Top</h2>
-      </router-link>
-    </div>
-    <router-view></router-view>
-  </div>
+<template lang="pug">
+  #app
+    .app-header
+      el-menu(:default-active="$route.fullPath" @select="handleSelect" mode="horizontal" router)
+        el-menu-item(index="/") Top
+        el-menu-item(index="/todos") Todos
+    .app-main
+      router-view
 </template>
 
 <script>
 export default {
-  name: "app"
+  name: "app",
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus">
+#app
+  font-family: 'Avenir', Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-align: center
+  color: #2c3e50
+  
+  .app-main
+    margin-top: 60px
 </style>
