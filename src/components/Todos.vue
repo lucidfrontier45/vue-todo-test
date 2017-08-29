@@ -11,7 +11,7 @@
 
     ul
       li(v-for="todo in filteredTodos" :key="todo.id")
-        button(@click="() => handleToggle(todo.id)")
+        button.toggle-btn(@click="() => handleToggle(todo.id)")
           span(v-if="todo.completed") restore
           span(v-else) done
         | {{todo.msg}}
@@ -58,12 +58,14 @@ export default {
 }
 </script>
 
-<style scoped>
-ul {
-  margin-left: 0;
-  padding-left: 0;
-  transform: translateX(50%);
-  text-align: left;
-  list-style-position: inside;
-}
+<style scoped lang="stylus">
+ul 
+  margin-left: 0
+  padding-left: 0
+  transform: translateX(45%)
+  text-align: left
+  list-style-position: inside
+
+.toggle-btn
+  margin-right: 10px
 </style>
