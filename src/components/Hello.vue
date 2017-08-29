@@ -1,10 +1,8 @@
-<template>
-  <div class="hello">
-    <img src="../assets/logo.png">
-    <h2>
-      <router-link to="/todos">Watch Todos</router-link>
-    </h2>
-  </div>
+<template lang="pug">
+  div
+    img(src="../assets/logo.png")
+    h2
+      router-link(to="/todos") Watch Todos
 </template>
 
 <script>
