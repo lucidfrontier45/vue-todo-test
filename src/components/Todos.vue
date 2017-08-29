@@ -1,35 +1,20 @@
-<template>
-  <div>
-    <div>
-      <input type="text"
-             v-model="input"></input>
-      <button @click="handleAdd">Add</button>
-      <select v-model="mode">
-        <option label="All"
-                value="all"></option>
-        <option label="Completed"
-                value="completed"></option>
-        <option label="Incomplete"
-                value="incomplete"></option>
+<template lang="pug">
+  div
+    
+    div
+      input(type="text" v-model="input")
+      button(@click="handleAdd") Add
+      select(v-model="mode")
+        option(label="All" value="all")
+        option(label="Completed" value="completed")
+        option(label="Incomplete" value="incomplete")
 
-      </select>
-    </div>
-    <ul>
-      <li v-for="todo in filteredTodos"
-          :key="todo.id">
-        <button @click="() => handleToggle(todo.id)">
-          <span v-if="todo.completed">
-            restore
-          </span>
-          <span v-else>
-            done
-          </span>
-        </button>
-        {{todo.msg}}
-
-      </li>
-    </ul>
-  </div>
+    ul
+      li(v-for="todo in filteredTodos" :key="todo.id")
+        button(@click="() => handleToggle(todo.id)")
+          span(v-if="todo.completed") restore
+          span(v-else) done
+        | {{todo.msg}}
 </template>
 
 <script>

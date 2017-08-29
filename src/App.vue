@@ -1,12 +1,8 @@
-<template>
-  <div id="app">
-    <div>
-      <router-link to="/">
-        <h2>Top</h2>
-      </router-link>
-    </div>
-    <router-view></router-view>
-  </div>
+<template lang="pug">
+  #app
+    router-link(to="/")
+      h2  Top
+    router-view
 </template>
 
 <script>
